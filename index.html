@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lancer Template</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/lancer.css">
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/fontawesome/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div id="main">
+
+        <!-- NAVIGATION BAR -->
+        <div id="navbar">
+            <div class="row">
+                <div class="col-sm-2 col-logo">
+                    <a href="#">
+                        <h4>Lancer</h4>
+                    </a>
+                </div>
+                <div class="col-sm-10 col-nav">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="nav-box" onclick="setTheme('light')">
+                                <img 
+                                    src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" 
+                                    alt="icon-profile" 
+                                    class="nav-icon no-bg theme-btn light"
+                                >
+                            </div>
+                            <div class="nav-box" onclick="setTheme('black')">
+                                <img 
+                                    src="https://cdn-icons-png.flaticon.com/512/196/196685.png" 
+                                    alt="icon-profile" 
+                                    class="nav-icon no-bg theme-btn dark"
+                                >
+                            </div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="nav-box text-right text-white">
+                                <img 
+                                    src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" 
+                                    alt="icon-profile" 
+                                    class="nav-icon profile-box"
+                                >
+                                <div class="nav-profile-box">
+                                    <ul>
+                                        <li><a href="#">Profile</a></li>
+                                        <li><a href="#">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- / ROW -->
+                </div>
+            </div><!-- / ROW -->
+        </div>
+        <!-- END NAVBAR -->
+        
+        <div id="wrapper" class="row">
+            <div id="sidebar" class="col-sm-2">
+                <ul class="lc-items">
+                    <li class="lc-item"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li class="lc-item withsub active">
+                        <a href="javascript:;;" class="sub">
+                            <i class="fa fa-database"></i> Master
+                        </a>
+                        <ul class="lc-sub-items">
+                            <a href="#"><li class="lc-item">User</li></a>
+                            <a href="#"><li class="lc-item">Role</li></a>
+                            <a href="#"><li class="lc-item">Product</li></a>
+                        </ul>
+                    </li>
+                    <li class="lc-item"><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                </ul>
+            </div>
+            <div id="content" class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="lc-card">
+                            <div class="lc-card-header">
+                                <p class="lc-card-title">First card</p>
+                            </div>
+                            <div class="lc-card-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis ipsam veniam odit tempore enim nemo repellendus soluta ullam cupiditate, iste illo odio excepturi voluptatem? Cupiditate ipsum rem dolores veritatis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="lc-card">
+                            <div class="lc-card-header">
+                                <p class="lc-card-title">Second card</p>
+                            </div>
+                            <div class="lc-card-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis ipsam veniam odit tempore enim nemo repellendus soluta ullam cupiditate, iste illo odio excepturi voluptatem? Cupiditate ipsum rem dolores veritatis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- / ROW -->
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- LOAD SCRIPT -->
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/lancer.js"></script>
+</body>
+</html>

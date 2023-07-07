@@ -1,0 +1,221 @@
+/*!
+ * Lancer Template (https://github.com/kiritoo9/lancer-template)
+ * Author kiritoo9 on github (https://github.com/kiritoo9)
+ * Copyright 2023 
+ */
+
+:root,
+:root.black {
+    --main: #151521;
+    --main-light: #1e1e2d;
+    --color-white: #dcdde1;
+    --font-color: #151521;
+    --font-color-hover: #FFFF;
+}
+
+:root.light {
+    --main: #f5f6fa;
+    --main-light: #40739e;
+    --color-white: #FFFF;
+    --font-color: #151521;
+    --font-color-hover: #151521;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    scrollbar-color: var(--main-light) var(--color-white) !important;
+    scrollbar-width: thin;
+    font-family: "Raleway", sans-serif !important;
+    background-color: var(--main) !important;
+}
+
+body::-webkit-scrollbar {
+    width: 13px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--main-light);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-white);
+    border-radius: 6px;
+    border: 3px solid var(--main-light);
+}
+
+#main {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/*
+    -- NAVBAR --
+*/
+#navbar {
+    width: 100%;
+    height: auto;
+    background-color: var(--main-light);
+    position: fixed;
+    z-index: 999 !important;
+}
+
+#navbar .col-logo {
+    text-align: center;
+    padding: 15px 0;
+}
+
+#navbar .col-logo a {
+    color: white !important;
+}
+
+#navbar .col-nav {
+    padding: 20px;
+    padding-right: 50px;
+}
+
+#navbar .col-nav img.nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+#navbar .col-nav img.nav-icon.no-bg {
+    background-color: transparent;
+}
+
+.theme-btn.dark {
+    display: none;
+}
+
+.light .theme-btn.dark {
+    display: block;
+}
+
+.light .theme-btn.light {
+    display: none;
+}
+
+#navbar .col-nav .nav-profile-box {
+    position: fixed;
+    width: 150px;
+    height: auto;
+    background-color: var(--color-white);
+    text-align: left;
+    padding: 20px 20px;
+    padding-bottom: 0px;
+    right: 40;
+    margin-top: 5px;
+    border-radius: 10px;
+    display: none;
+    border: 1px solid var(--main);
+}
+
+#navbar .col-nav .nav-profile-box a {
+    color: var(--font-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+#navbar .col-nav .nav-profile-box a:hover {
+    color: var(--font-color-hover) !important;
+}
+
+#navbar .col-nav .nav-profile-box a li {
+    margin-bottom: 7px;
+}
+
+/*
+    -- WRAPPER --
+*/
+#wrapper {
+    width: 100%;
+    min-height: 100px;
+}
+
+#sidebar {
+    width: 100%;
+    background-color: var(--main-light);
+    position: fixed;
+    padding: 15px;
+}
+
+#sidebar ul.lc-items {
+    margin-left: 20px;
+}
+#sidebar ul.lc-items li.lc-item {
+    margin-bottom: 10px;
+}
+
+#sidebar ul.lc-items li.lc-item.active > a {
+    color: var(--font-color-hover) !important;
+}
+
+#sidebar ul.lc-items li.lc-item a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#sidebar ul.lc-items li.lc-item a:hover {
+    color: var(--font-color-hover) !important;
+}
+
+#sidebar ul.lc-items li.lc-item a i {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+#sidebar ul.lc-items li.lc-item a i.caret {
+    float: right;
+    margin-top: 5px;
+}
+
+#sidebar ul.lc-items li.lc-item ul.lc-sub-items {
+    margin-left: 20px;
+    margin-top: 15px;
+    display: none;
+}
+
+#sidebar ul.lc-items li.lc-item.active ul.lc-sub-items {
+    display: block;
+}
+
+#content {
+    width: 100%;
+    padding: 40px 20px;
+}
+
+#content .lc-card {
+    width: 100%;
+    background-color: var(--color-white) !important;
+    color: var(--font-color) !important;
+    border-radius: 5px;
+}
+
+#content .lc-card .lc-card-header {
+    padding: 20px;
+    width: 100%;
+    min-height: 50px;
+    border-bottom: 1px solid var(--main);
+}
+
+#content .lc-card .lc-card-body {
+    padding: 20px;
+    width: 100%;
+    min-height: 50px;
+}
+
+#content .lc-card .lc-card-title {
+    font-size: 18px !important;
+    margin-bottom: 0;
+}
