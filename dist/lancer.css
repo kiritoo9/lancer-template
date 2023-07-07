@@ -9,16 +9,16 @@
     --main: #151521;
     --main-light: #1e1e2d;
     --color-white: #dcdde1;
-    --font-color: #151521;
+    --font-color: #dcdde1;
     --font-color-hover: #FFFF;
 }
 
 :root.light {
     --main: #f5f6fa;
     --main-light: #40739e;
-    --color-white: #FFFF;
-    --font-color: #151521;
-    --font-color-hover: #151521;
+    --color-white: #f5f6fa;
+    --font-color: #FFFF;
+    --font-color-hover: #FFFF;
 }
 
 * {
@@ -110,7 +110,7 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     width: 150px;
     height: auto;
-    background-color: var(--color-white);
+    background-color: var(--main-light);
     text-align: left;
     padding: 20px 20px;
     padding-bottom: 0px;
@@ -126,6 +126,7 @@ body::-webkit-scrollbar-thumb {
     text-decoration: none;
     font-size: 14px;
 }
+
 #navbar .col-nav .nav-profile-box a:hover {
     color: var(--font-color-hover) !important;
 }
@@ -152,11 +153,12 @@ body::-webkit-scrollbar-thumb {
 #sidebar ul.lc-items {
     margin-left: 20px;
 }
+
 #sidebar ul.lc-items li.lc-item {
     margin-bottom: 10px;
 }
 
-#sidebar ul.lc-items li.lc-item.active > a {
+#sidebar ul.lc-items li.lc-item.active>a {
     color: var(--font-color-hover) !important;
 }
 
@@ -197,7 +199,7 @@ body::-webkit-scrollbar-thumb {
 
 #content .lc-card {
     width: 100%;
-    background-color: var(--color-white) !important;
+    background-color: var(--main-light) !important;
     color: var(--font-color) !important;
     border-radius: 5px;
 }
@@ -206,13 +208,14 @@ body::-webkit-scrollbar-thumb {
     padding: 20px;
     width: 100%;
     min-height: 50px;
-    border-bottom: 1px solid var(--main);
+    border-bottom: 1px solid var(--font-color);
 }
 
 #content .lc-card .lc-card-body {
     padding: 20px;
     width: 100%;
     min-height: 50px;
+    font-size: 14px;
 }
 
 #content .lc-card .lc-card-title {
