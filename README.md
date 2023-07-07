@@ -6,6 +6,7 @@ Free template for your website
     <li>Bootstrap v4.6.2</li>
     <li>Jquery v3.7.0</li>
     <li>Fontawesome v4.7.0</li>
+    <li>Amchart v4</li>
 </ul>
 
 ## Author

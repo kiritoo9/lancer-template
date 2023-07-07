@@ -4,7 +4,10 @@
  * Copyright 2023 
  */
 
-const setTheme = theme => document.documentElement.className = theme;
+const setTheme = (theme) => {
+    document.documentElement.className = theme;
+    _handleAmchartColors();
+}
 
 $(function() {
 
@@ -73,4 +76,20 @@ $(function() {
         })
     }
 
+    setTimeout(function() {
+        _handleAmchartColors();
+    }, 100);
+
 })
+
+function _handleAmchartColors() {
+    const _bodystyles = window.getComputedStyle(document.body);
+    const _fcolor = _bodystyles.getPropertyValue('--font-color');
+    for (i=0; i<$(`tspan`).length; i++) {
+        const tspan = $(`tspan`)[i];
+        const g = $(tspan).parent().parent().parent();
+        if($(g).attr("fill") !== undefined) {
+            $(g).attr("fill", _fcolor);
+        }
+    }
+}

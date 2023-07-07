@@ -8,17 +8,17 @@
 :root.black {
     --main: #151521;
     --main-light: #1e1e2d;
-    --color-white: #dcdde1;
+    --base-color: #dcdde1;
     --font-color: #dcdde1;
     --font-color-hover: #FFFF;
 }
 
 :root.light {
-    --main: #f5f6fa;
-    --main-light: #40739e;
-    --color-white: #f5f6fa;
-    --font-color: #FFFF;
-    --font-color-hover: #FFFF;
+    --main: #dcdde1;
+    --main-light: #f5f6fa;
+    --base-color: #63636e;
+    --font-color: #63636e;
+    --font-color-hover: #000000;
 }
 
 * {
@@ -30,7 +30,7 @@
 body {
     margin: 0;
     padding: 0;
-    scrollbar-color: var(--main-light) var(--color-white) !important;
+    scrollbar-color: var(--main-light) var(--base-color) !important;
     scrollbar-width: thin;
     font-family: "Raleway", sans-serif !important;
     background-color: var(--main) !important;
@@ -45,7 +45,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: var(--color-white);
+    background-color: var(--base-color);
     border-radius: 6px;
     border: 3px solid var(--main-light);
 }
@@ -72,7 +72,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #navbar .col-logo a {
-    color: white !important;
+    color: var(--base-color) !important;
 }
 
 #navbar .col-nav {
@@ -84,7 +84,7 @@ body::-webkit-scrollbar-thumb {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--color-white);
+    background-color: var(--base-color);
     border: none;
     cursor: pointer;
     object-fit: cover;
@@ -104,6 +104,9 @@ body::-webkit-scrollbar-thumb {
 
 .light .theme-btn.light {
     display: none;
+}
+.light #navbar .col-nav img.nav-icon {
+    background-color: transparent;
 }
 
 #navbar .col-nav .nav-profile-box {
@@ -156,6 +159,8 @@ body::-webkit-scrollbar-thumb {
 
 #sidebar ul.lc-items li.lc-item {
     margin-bottom: 10px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 #sidebar ul.lc-items li.lc-item.active>a {
@@ -163,7 +168,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #sidebar ul.lc-items li.lc-item a {
-    color: var(--color-white);
+    color: var(--base-color);
     text-decoration: none;
     font-size: 14px;
 }
@@ -202,6 +207,7 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--main-light) !important;
     color: var(--font-color) !important;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 #content .lc-card .lc-card-header {

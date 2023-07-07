@@ -1,15 +1,26 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lancer Template</title>
+    <title>Dashboard - Lancer</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/lancer.css">
     <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/fontawesome/css/font-awesome.min.css">
+
+    <!-- AMCHARTS -->
+    <style>
+        #revenue-chart,
+        #sales-branch {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
 </head>
+
 <body>
 
     <div id="main">
@@ -26,27 +37,15 @@
                     <div class="row">
                         <div class="col-sm-2">
                             <div class="nav-box" onclick="setTheme('light')">
-                                <img 
-                                    src="images/sun.png" 
-                                    alt="icon-profile" 
-                                    class="nav-icon no-bg theme-btn light"
-                                >
+                                <img src="images/sun.png" alt="icon-profile" class="nav-icon no-bg theme-btn light">
                             </div>
                             <div class="nav-box" onclick="setTheme('black')">
-                                <img 
-                                    src="images/moon.png" 
-                                    alt="icon-profile" 
-                                    class="nav-icon no-bg theme-btn dark"
-                                >
+                                <img src="images/moon.png" alt="icon-profile" class="nav-icon no-bg theme-btn dark">
                             </div>
                         </div>
                         <div class="col-sm-10">
                             <div class="nav-box text-right text-white">
-                                <img 
-                                    src="images/user.png" 
-                                    alt="icon-profile" 
-                                    class="nav-icon profile-box"
-                                >
+                                <img src="images/user.png" alt="icon-profile" class="nav-icon profile-box">
                                 <div class="nav-profile-box">
                                     <ul>
                                         <li><a href="#">Profile</a></li>
@@ -60,22 +59,40 @@
             </div><!-- / ROW -->
         </div>
         <!-- END NAVBAR -->
-        
+
         <div id="wrapper" class="row">
             <div id="sidebar" class="col-sm-2">
                 <ul class="lc-items">
-                    <li class="lc-item"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                    <li class="lc-item withsub active">
+                    <li class="lc-item active"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li class="lc-item withsub">
                         <a href="javascript:;;" class="sub">
-                            <i class="fa fa-database"></i> Master
+                            <i class="fa fa-cubes"></i> Features
                         </a>
                         <ul class="lc-sub-items">
-                            <a href="#"><li class="lc-item">User</li></a>
-                            <a href="#"><li class="lc-item">Role</li></a>
-                            <a href="#"><li class="lc-item">Product</li></a>
+                            <a href="#">
+                                <li class="lc-item">Datatables</li>
+                            </a>
+                            <a href="#">
+                                <li class="lc-item">Cards</li>
+                            </a>
+                            <a href="#">
+                                <li class="lc-item">Forms</li>
+                            </a>
                         </ul>
                     </li>
-                    <li class="lc-item"><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                    <li class="lc-item withsub">
+                        <a href="javascript:;;" class="sub">
+                            <i class="fa fa-book"></i> Page
+                        </a>
+                        <ul class="lc-sub-items">
+                            <a href="pages/login.html">
+                                <li class="lc-item">Login</li>
+                            </a>
+                            <a href="#">
+                                <li class="lc-item">404 Not Found</li>
+                            </a>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div id="content" class="col-sm-10">
@@ -83,24 +100,20 @@
                     <div class="col-sm-6">
                         <div class="lc-card">
                             <div class="lc-card-header">
-                                <p class="lc-card-title">First card</p>
+                                <p class="lc-card-title">Revenue This Year</p>
                             </div>
                             <div class="lc-card-body">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis ipsam veniam odit tempore enim nemo repellendus soluta ullam cupiditate, iste illo odio excepturi voluptatem? Cupiditate ipsum rem dolores veritatis.
-                                </p>
+                                <div id="revenue-chart"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="lc-card">
                             <div class="lc-card-header">
-                                <p class="lc-card-title">Second card</p>
+                                <p class="lc-card-title">Sales By Branches</p>
                             </div>
                             <div class="lc-card-body">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis ipsam veniam odit tempore enim nemo repellendus soluta ullam cupiditate, iste illo odio excepturi voluptatem? Cupiditate ipsum rem dolores veritatis.
-                                </p>
+                                <div id="sales-branch"></div>
                             </div>
                         </div>
                     </div>
@@ -109,10 +122,87 @@
         </div>
 
     </div>
-    
+
     <!-- LOAD SCRIPT -->
     <script src="dist/jquery.min.js"></script>
     <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- AMCHARTS -->
+    <script src="dist/amcharts/core.js"></script>
+    <script src="dist/amcharts/charts.js"></script>
+    <script src="dist/amcharts/themes/animated.js"></script>
+    <script>
+        am4core.ready(function () {
+            am4core.useTheme(am4themes_animated);
+            var chart = am4core.create("revenue-chart", am4charts.XYChart);
+
+            var data = [];
+            var value = 50;
+            for (var i = 0; i < 300; i++) {
+                var date = new Date();
+                date.setHours(0, 0, 0, 0);
+                date.setDate(i);
+                value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+                data.push({ date: date, value: value });
+            }
+
+            chart.data = data;
+            var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+            dateAxis.renderer.minGridDistance = 60;
+            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            var series = chart.series.push(new am4charts.LineSeries());
+            series.dataFields.valueY = "value";
+            series.dataFields.dateX = "date";
+            series.tooltipText = "{value}"
+
+            series.tooltip.pointerOrientation = "vertical";
+
+            chart.cursor = new am4charts.XYCursor();
+            chart.cursor.snapToSeries = series;
+            chart.cursor.xAxis = dateAxis;
+
+            // SALES BRANCH
+            am4core.useTheme(am4themes_animated);
+            var chart = am4core.create("sales-branch", am4charts.PieChart);
+            chart.data = [{
+                "country": "Jakarta",
+                "litres": 501.9
+            }, {
+                "country": "Bandung",
+                "litres": 301.9
+            }, {
+                "country": "Bogor",
+                "litres": 201.1
+            }, {
+                "country": "Surabaya",
+                "litres": 165.8
+            }, {
+                "country": "Malang",
+                "litres": 139.9
+            }, {
+                "country": "Semarang",
+                "litres": 128.3
+            }, {
+                "country": "Padang",
+                "litres": 99
+            }
+            ];
+
+            var pieSeries = chart.series.push(new am4charts.PieSeries());
+            pieSeries.dataFields.value = "litres";
+            pieSeries.dataFields.category = "country";
+            pieSeries.slices.template.stroke = am4core.color("#fff");
+            pieSeries.slices.template.strokeOpacity = 1;
+
+            pieSeries.hiddenState.properties.opacity = 1;
+            pieSeries.hiddenState.properties.endAngle = -90;
+            pieSeries.hiddenState.properties.startAngle = -90;
+            chart.hiddenState.properties.radius = am4core.percent(0);
+        });
+    </script>
+
+    <!-- LANCER CORE -->
     <script src="dist/lancer.js"></script>
 </body>
+
 </html>
