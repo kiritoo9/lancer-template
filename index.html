@@ -22,9 +22,7 @@
 </head>
 
 <body>
-
     <div id="main">
-
         <!-- NAVIGATION BAR -->
         <div id="navbar">
             <div class="row">
@@ -48,7 +46,7 @@
                                 <img src="images/user.png" alt="icon-profile" class="nav-icon profile-box">
                                 <div class="nav-profile-box">
                                     <ul>
-                                        <li><a href="#">Profile</a></li>
+                                        <li><a href="pages/profile.html">Profile</a></li>
                                         <li><a href="#">Logout</a></li>
                                     </ul>
                                 </div>
@@ -63,21 +61,21 @@
         <div id="wrapper" class="row">
             <div id="sidebar" class="col-sm-2">
                 <ul class="lc-items">
-                    <li class="lc-item active"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li class="lc-item active"><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                     <li class="lc-item withsub">
                         <a href="javascript:;;" class="sub">
                             <i class="fa fa-cubes"></i> Features
                         </a>
                         <ul class="lc-sub-items">
-                            <a href="#">
-                                <li class="lc-item">Datatables</li>
-                            </a>
-                            <a href="#">
-                                <li class="lc-item">Cards</li>
-                            </a>
-                            <a href="#">
-                                <li class="lc-item">Forms</li>
-                            </a>
+                            <li class="lc-item">
+                                <a href="pages/datatables.html">Datatables</a>
+                            </li>
+                            <li class="lc-item">
+                                <a href="pages/cards.html">Cards</a>
+                            </li>
+                            <li class="lc-item">
+                                <a href="pages/forms.html">Forms</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="lc-item withsub">
@@ -88,7 +86,7 @@
                             <a href="pages/login.html">
                                 <li class="lc-item">Login</li>
                             </a>
-                            <a href="#">
+                            <a href="pages/not-found.html">
                                 <li class="lc-item">404 Not Found</li>
                             </a>
                         </ul>
@@ -118,10 +116,18 @@
                         </div>
                     </div>
                 </div><!-- / ROW -->
-            </div>
-        </div>
 
+                <!-- FOOTER -->
+                <div id="footer">
+                    &copy; 2023 - Designed by <a href="https://github.com/kiritoo9">kiritoo9 on github</a>
+                </div>
+                <!-- END FOOTER -->
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- END WRAPPER -->
     </div>
+    <!-- END MAIN -->
 
     <!-- LOAD SCRIPT -->
     <script src="dist/jquery.min.js"></script>

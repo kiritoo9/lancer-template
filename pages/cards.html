@@ -1,0 +1,158 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards - Lancer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../dist/lancer.css">
+    <link rel="stylesheet" href="./../dist/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../dist/fontawesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="main">
+        <!-- NAVIGATION BAR -->
+        <div id="navbar">
+            <div class="row">
+                <div class="col-sm-2 col-logo">
+                    <a href="#">
+                        <h4>Lancer</h4>
+                    </a>
+                </div>
+                <div class="col-sm-10 col-nav">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="nav-box" onclick="setTheme('light')">
+                                <img src="./../images/sun.png" alt="icon-profile" class="nav-icon no-bg theme-btn light">
+                            </div>
+                            <div class="nav-box" onclick="setTheme('black')">
+                                <img src="./../images/moon.png" alt="icon-profile" class="nav-icon no-bg theme-btn dark">
+                            </div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="nav-box text-right text-white">
+                                <img src="./../images/user.png" alt="icon-profile" class="nav-icon profile-box">
+                                <div class="nav-profile-box">
+                                    <ul>
+                                        <li><a href="profile.html">Profile</a></li>
+                                        <li><a href="#">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- / ROW -->
+                </div>
+            </div><!-- / ROW -->
+        </div>
+        <!-- END NAVBAR -->
+
+        <div id="wrapper" class="row">
+            <div id="sidebar" class="col-sm-2">
+                <ul class="lc-items">
+                    <li class="lc-item"><a href="../index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li class="lc-item withsub active">
+                        <a href="javascript:;;" class="sub">
+                            <i class="fa fa-cubes"></i> Features
+                        </a>
+                        <ul class="lc-sub-items">
+                            <li class="lc-item">
+                                <a href="datatables.html">Datatables</a>
+                            </li>
+                            <li class="lc-item active">
+                                <a href="cards.html">Cards</a>
+                            </li>
+                            <li class="lc-item">
+                                <a href="forms.html">Forms</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="lc-item withsub">
+                        <a href="javascript:;;" class="sub">
+                            <i class="fa fa-book"></i> Page
+                        </a>
+                        <ul class="lc-sub-items">
+                            <li class="lc-item">
+                                <a href="login.html">Login</a>
+                            </li>
+                            <li class="lc-item">
+                                <a href="not-found.html">404 Not Found</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="content" class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="lc-card">
+                            <div class="lc-card-header">
+                                <p class="lc-card-title">Basic Card</p>
+                            </div>
+                            <div class="lc-card-body">
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui aspernatur totam quis sapiente porro dignissimos iste, cum, delectus tempora quas, maxime recusandae pariatur officiis eaque. Ipsum illo eligendi nesciunt consectetur?
+                                </p>
+                                <br />
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui aspernatur totam quis sapiente porro dignissimos iste, cum, delectus tempora quas, maxime recusandae pariatur officiis eaque. Ipsum illo eligendi nesciunt consectetur?
+                                </p>
+                                <br />
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui aspernatur totam quis sapiente porro dignissimos iste, cum, delectus tempora quas, maxime recusandae pariatur officiis eaque. Ipsum illo eligendi nesciunt consectetur?
+                                </p>
+                            </div>
+                            <div class="lc-card-footer">
+                                <a href="#" class="btn btn-primary btn-sm">Example Footer Button <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="lc-card">
+                            <div class="lc-card-header header-image">
+                                <img src="../images/views-1.jpg" />
+                            </div>
+                            <div class="lc-card-body">
+                                <p class="lc-card-title">Card With Image</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo maxime nobis vel quasi eum. Rerum quisquam nihil minus reiciendis quo autem explicabo eveniet, dicta eum libero mollitia iusto dolor?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="lc-card">
+                            <div class="lc-card-header header-image">
+                                <img src="../images/views-2.jpg" />
+                            </div>
+                            <div class="lc-card-body">
+                                <p class="lc-card-title">Card With Image</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo maxime nobis vel quasi eum. Rerum quisquam nihil minus reiciendis quo autem explicabo eveniet, dicta eum libero mollitia iusto dolor?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- / ROW -->
+
+                <!-- FOOTER -->
+                <div id="footer">
+                    &copy; 2023 - Designed by <a href="https://github.com/kiritoo9">kiritoo9 on github</a>
+                </div>
+                <!-- END FOOTER -->
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- END WRAPPER -->
+    </div>
+    <!-- END MAIN -->
+
+    <!-- LOAD SCRIPT -->
+    <script src="./../dist/jquery.min.js"></script>
+    <script src="./../dist/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./../dist/lancer.js"></script>
+</body>
+
+</html>

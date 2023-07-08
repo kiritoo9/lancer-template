@@ -10,7 +10,7 @@
     --main-light: #1e1e2d;
     --base-color: #dcdde1;
     --font-color: #dcdde1;
-    --font-color-hover: #FFFF;
+    --font-color-hover: #40739e;
 }
 
 :root.light {
@@ -18,7 +18,7 @@
     --main-light: #f5f6fa;
     --base-color: #63636e;
     --font-color: #63636e;
-    --font-color-hover: #000000;
+    --font-color-hover: #487eb0;
 }
 
 * {
@@ -105,6 +105,7 @@ body::-webkit-scrollbar-thumb {
 .light .theme-btn.light {
     display: none;
 }
+
 .light #navbar .col-nav img.nav-icon {
     background-color: transparent;
 }
@@ -149,6 +150,7 @@ body::-webkit-scrollbar-thumb {
 #sidebar {
     width: 100%;
     background-color: var(--main-light);
+    border-top: 1px solid var(--main);
     position: fixed;
     padding: 15px;
 }
@@ -163,7 +165,8 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
 }
 
-#sidebar ul.lc-items li.lc-item.active>a {
+#sidebar ul.lc-items li.lc-item.active>a,
+#sidebar ul.lc-items li.lc-item.withsub ul.lc-sub-items li.lc-item.active>a {
     color: var(--font-color-hover) !important;
 }
 
@@ -214,7 +217,20 @@ body::-webkit-scrollbar-thumb {
     padding: 20px;
     width: 100%;
     min-height: 50px;
-    border-bottom: 1px solid var(--font-color);
+    border-bottom: 1px solid var(--main);
+}
+
+#content .lc-card .lc-card-header.header-image {
+    padding: 0;
+    width: 100%;
+    min-height: 50px;
+}
+
+#content .lc-card .lc-card-header.header-image img {
+    width: 100%;
+    min-height: 180px;
+    height: auto;
+    object-fit: cover;
 }
 
 #content .lc-card .lc-card-body {
@@ -223,8 +239,28 @@ body::-webkit-scrollbar-thumb {
     min-height: 50px;
     font-size: 14px;
 }
+#content .lc-card .lc-card-footer {
+    padding: 20px;
+    width: 100%;
+    min-height: 50px;
+    font-size: 14px;
+    text-align: right;
+    border-top: 1px solid var(--main);
+}
 
 #content .lc-card .lc-card-title {
     font-size: 18px !important;
-    margin-bottom: 0;
+}
+#content .lc-card .lc-card-header .lc-card-title {
+    margin-bottom: 0 !important;
+}
+
+/* FOOTER */
+#footer {
+    width: 100%;
+    min-height: 30px;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 40px;
+    color: var(--font-color);
 }
