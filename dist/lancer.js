@@ -76,6 +76,19 @@ $(function() {
         })
     }
 
+    for(i=0; i<$(`.lc-card.side-image`).length; i++) {
+        const card_side = $(`.lc-card.side-image`)[i];
+        const img = $(card_side).find("img");
+        const card_content = $(card_side).find(`.lc-card-content`);
+        if(img != undefined && card_content != undefined) {
+            const h = card_content.height();
+            console.log(h)
+            $(img).css({
+                height: h
+            });
+        }
+    }
+
     setTimeout(function() {
         _handleAmchartColors();
     }, 100);
